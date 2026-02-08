@@ -2,10 +2,11 @@
 ##############################################################
 #
 # AESD-ASSIGNMENTS
+# Reference: Buildroot user manual (Section 9.2.1)
+# https://buildroot.org/downloads/manual/manual.html#outside-br-custom
 #
 ##############################################################
 
-#TODO: Fill up the contents below in order to reference your assignment 3 git contents
 AESD_ASSIGNMENTS_VERSION = '46343e792c567dbece5e7b95a5ba232777d1755d'
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
@@ -18,7 +19,6 @@ define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
 endef
 
-# TODO add your writer, finder and finder-test utilities/scripts to the installation steps below
 define AESD_ASSIGNMENTS_INSTALL_TARGET_CMDS
 	$(INSTALL) -d 0755 $(@D)/conf/ $(TARGET_DIR)/etc/finder-app/conf/
 	$(INSTALL) -m 0755 $(@D)/conf/* $(TARGET_DIR)/etc/finder-app/conf/
